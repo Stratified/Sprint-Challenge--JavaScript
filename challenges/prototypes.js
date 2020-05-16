@@ -7,13 +7,21 @@
 */
 
 function CuboidMaker(length, width, height) {
-  this.volume = () => {
-    return length * width * height;
-  };
-  this.surfaceArea = () => {
-    return 2 * (length * width + length * height + width * height);
-  };
+  this.length = length;
+  this.width = width;
+  this.height = height;
 }
+CuboidMaker.prototype.volume = function () {
+  return this.length * this.width * this.height;
+};
+CuboidMaker.prototype.surfaceArea = function () {
+  return (
+    2 *
+    (this.length * this.width +
+      this.length * this.height +
+      this.width * this.height)
+  );
+};
 const cuboid = new CuboidMaker(4, 5, 5);
 
 /* == Step 2: Volume Method ==
